@@ -1,0 +1,18 @@
+body{
+	margin-bottom: 90px;
+	margin-left: 20px;
+	margin-right: 20px;
+	vertical-align: top;
+	text-align: center;
+}
+.page-header{
+	margin-top:0;
+}
+
+.panel-body{
+	padding-top: 0;
+}
+
+.featureimg{
+margin-bottom: 15px;
+}

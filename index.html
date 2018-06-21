@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html >
+<html>
+<head>
+<title>Mkulima.com on web</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/bootstrap.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script src="jquery.js"></script>
+<!-- <link rel="manifest" href="manifest.json"> -->
+</head>
+<body>
+	<!--end of header and start of body-->
+<div class="navbar navbar-inverse navbar-static-top">
+
+		<div>
+	
+		<a href="#" class="navbar-brand navbar-static-top"> Mkulima.com </a>
+	
+	  <button class="navbar-toggle" data-toggle = "collapse" data-target=".navheadercollapse"> 
+	
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	
+	  </button>
+	
+			<div class= "collapse navbar-collapse navheadercollapse">
+			  
+			<ul class="nav navbar-nav navbar-right">
+			<li class = "active"><a href="">reset buttons</a></li>
+			<li><a href="#"></a></li>
+			</ul>
+	
+			</div>
+	
+		</div>
+	
+	</div>
+	
+	<!--strip ends here-->
+	<div class="row">
+			<!--col1 start-->
+			<div class="col-sm-4">	
+				<input class="btn btn-secondary" type="button" NAME="butname" value="Turn ON LED" />
+				<h6>LED is OFF!</h6><hr><br>
+			</div>
+			<!--col2 start-->
+			<div class="col-sm-4">	
+				<input class="btn btn-warning" type="button" NAME="butname2" value="Turn ON pum" />
+				<p>pum is OFF!</p><hr><br>
+			</div>
+			<!--col3 start-->
+			<div class="col-sm-4">	
+				<input class="btn btn-info" type="button" NAME="butname3" value="Turn ON alm" />
+				<h5>alm is OFF!</h5><hr><br>
+			</div>
+			<!--col4 start-->
+			<div class="col-sm-4">	
+				<input class="btn btn-danger" type="button" NAME="rst" value="System rst"/><Br>
+				<i>remote system restart</i><hr><br>
+			</div>
+			
+			<!--starts footer here-->
+  <div class="navbar navbar-default navbar-fixed-bottom">
+<br>
+Mkulima.com on web 
+All Rights Reserved.Copyright Mkulima.com &copy 2018. 
+Designed and maintained by <b>Antecode Computers</b>
+
+  </div>
+  <!-- <script src="./master.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+<script src="js/bootstrap.js"></script>
+</body>
+<script>
+$.ajaxSetup({timeout:1000});
+btn = document.querySelector('input[name="butname"]');
+txt = document.querySelector('h6');
+btn.addEventListener('click', led1);
+function led1()
+{
+	var val1 = 'OFF';
+	if (btn.value === 'Turn OFF LED') 
+	{
+	btn.value = 'Turn ON LED';
+	val1 = 'OFF';
+	txt.textContent = 'LED is OFF!';
+	} 
+	else 
+	{
+    	btn.value = 'Turn OFF LED';
+	val1 = 'ON';
+    	txt.textContent = 'LED is ON!';
+	}
+	TextVar = "192.168.43.173";
+	ArduinoVar = "http://" + TextVar + ":80/";
+	$.get( ArduinoVar, {led: val1})	;
+	{Connection: close};
+}
+</script>
+
+
+<script>
+	$.ajaxSetup({timeout:1001});
+	btn2 = document.querySelector('input[name="butname2"]');
+	txt2 = document.querySelector('p');
+	btn2.addEventListener('click', pum);
+	function pum()
+	{
+		var val2 = 'OFF';
+		if (btn2.value === 'Turn OFF pum') 
+		{
+		btn2.value = 'Turn ON pum';
+		val2 = 'OFF';
+		txt2.textContent = 'pum is OFF!';
+		} 
+		else 
+		{
+			btn2.value = 'Turn OFF pum';
+		val2 = 'ON';
+			txt2.textContent = 'pum is ON!';
+		}
+		TextVar2 = "192.168.43.173";
+		ArduinoVar2 = "http://" + TextVar2 + ":80/";
+		$.get( ArduinoVar2, {pum: val2})	;
+		{Connection: close};
+	}
+	</script>
+
+<script>
+	$.ajaxSetup({timeout:1002});
+	btn3 = document.querySelector('input[name="butname3"]');
+	txt3 = document.querySelector('h5');
+	btn3.addEventListener('click', alm);
+	function alm()
+	{
+		var val3 = 'OFF';
+		if (btn3.value === 'Turn OFF alm') 
+		{
+		btn3.value = 'Turn ON alm';
+		val3 = 'OFF';
+		txt3.textContent = 'alm is OFF!';
+		} 
+		else 
+		{
+			btn3.value = 'Turn OFF alm';
+		val3 = 'ON';
+			txt3.textContent = 'alm is ON!';
+		}
+		TextVar3 = "192.168.43.173";
+		ArduinoVar3 = "http://" + TextVar3 + ":80/";
+		$.get( ArduinoVar3, {alm: val3})	;
+		{Connection: close};
+	}
+	</script>
+
+<script>
+	$.ajaxSetup({timeout:1003});
+	btn4 = document.querySelector('input[name="rst"]');
+	txt4 = document.querySelector('i');
+	btn4.addEventListener('click', rst);
+	function rst()
+	{
+		var val4 = 'OFF';
+		if (btn4.value === 'rst System') 
+		{
+		btn4.value = 'rst System';
+		val4 = 'OFF';
+		} 
+		else 
+		{
+			btn4.value = 'rst System';
+		val4 = 'ON';
+		}
+		TextVar4 = "192.168.43.173";
+		ArduinoVar4 = "http://" + TextVar4 + ":80/";
+		$.get( ArduinoVar4, {rst: val4})	;
+		{Connection: close};
+	}
+	</script>
+</html>
