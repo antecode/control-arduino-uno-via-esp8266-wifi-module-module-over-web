@@ -1,6 +1,6 @@
 {
-	"name": "Mkulima.com on web",
-	"short_name": "mkulima.com",
+	"name": "Smarfa on web",
+	"short_name": "Smarfa",
 	"start_url": "index.html",
 	"display" : "standalone",
 	"orientation": "portrait",

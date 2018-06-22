@@ -13,7 +13,7 @@ requirements
     -mini electric water pump
     -5v bulb Lights
     -alarm (buzzer)
-    NB;/ the esp8266.ino code is simple and can be altered to match your specs
+    NB;/ the esp8266.ino code is included. it is simple and can be altered to match your specs
     
 Control via web platform & esp8266 wifi module.
 1. Open index.html in the public folder on your server (I used xampp/lampp for linux)
